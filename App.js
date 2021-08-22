@@ -22,7 +22,7 @@ const initialState = {
   displayResult: '',
   point: false,
   first: true,
-  operator: false
+  operator: true
 }
 
 export default class App extends Component {
@@ -61,14 +61,15 @@ export default class App extends Component {
   }
 
   addOperation = operation => {
-    if (!this.state.operator) {
-      const equals = operation === '='
+    const equals = operation === '='
+    if (!this.state.operator && !equals){
       const displayValue = this.state.displayValue + (equals ? '' : operation)
-      this.setState({ displayValue, point: false, operator: true, first: false, operation })
+      this.setState({ displayValue, point: false, operator: true, first: false, operation, clearDisplay: false })
 
-      if(equals) {
-        this.setState({ displayValue: this.state.displayResult, displayResult: ''})
-      }
+      
+    }
+    else if(equals && !this.state.first && !this.state.operator){
+      this.setState({ displayValue: this.state.displayResult, displayResult: '', clearDisplay: true, first: true})
     }
   }
 
