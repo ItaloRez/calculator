@@ -59,7 +59,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ## Demonstração
 
 <h1 align="center">
-  <img alt="Podcastr" title="#Podcastr" src="./assets/calc.jpeg" />
+  <img alt="Calculator" title="#calc" width="350" src="./assets/calc.jpeg" />
 </h1>
 
 ## Autor
